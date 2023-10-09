@@ -1,0 +1,148 @@
+﻿@model BussinessObject.DataAccess.FlowerBouquet
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<style>
+    .details-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .details-label {
+        flex-basis: 30%;
+    }
+
+    .details-value {
+        flex-basis: 70%;
+    }
+
+    .alert {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #f8f9fa;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+    }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>
+
+<h1>Delete</h1>
+
+<div>
+    <h4>Flower Bouquet Details</h4>
+    <hr />
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.FlowerBouquetId)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.FlowerBouquetId)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.CategoryId)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.FlowerBouquetName)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.FlowerBouquetName)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.UnitPrice)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.UnitsInStock)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.FlowerBouquetStatus)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.FlowerBouquetStatus)
+        </div>
+    </div>
+
+    <div class="details-row">
+        <div class="details-label">
+            @Html.DisplayNameFor(model => model.SupplierId)
+        </div>
+        <div class="details-value">
+            @Html.DisplayFor(model => model.SupplierId)
+        </div>
+    </div>
+
+   
+
+    <form asp-action="Deleted" asp-route-id="@Model.FlowerBouquetId" class="confirm-delete">
+        <input type="hidden" name="id" value="@Model.FlowerBouquetId" />
+        <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')" /> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+
